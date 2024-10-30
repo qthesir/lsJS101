@@ -7,6 +7,8 @@ const readline = require("readline-sync"); // looks for the "readline-sync" libr
 // The library is returned in the form of an object and assigned to
 // the variable readline.
 
+// Testing out git branches
+
 function prompt(message) {
   console.log(`=> ${message}`);
 }
