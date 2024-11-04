@@ -9,6 +9,10 @@ const readline = require("readline-sync"); // looks for the "readline-sync" libr
 
 // Testing out git branches
 
+const messages = require("./calc_msgs.json");
+
+console.log(messages.welcome);
+
 function prompt(message) {
   console.log(`=> ${message}`);
 }
@@ -17,33 +21,33 @@ function invalidNumber(number) {
   return number.trimStart() === "" || Number.isNaN(Number(number)); // works because the Number coerces any non-numeric string value to NaN
 }
 
-prompt("Welcome to the Calculator!");
+prompt(messages.welcome);
 
-let doAgain
+let doAgain;
 do {
-  prompt("What's the first number?");
+  prompt(messages.firstNumber);
   let number1 = readline.question();
 
   while (invalidNumber(number1)) {
-    prompt("Hmm... that doesn't look like a valid number.");
+    prompt(messages.invalidNumber);
     number1 = readline.question();
   }
 
-  prompt("What's the second number?");
+  prompt(messages.secondNumber);
   let number2 = readline.question();
 
   while (invalidNumber(number2)) {
-    prompt("Hmm... that doesn't look like a valid number.");
+    prompt(messages.invalidNumber);
     number2 = readline.question();
   }
 
   prompt(
-    "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide"
+    messages.performOperation
   );
   let operation = readline.question();
 
   while (!["1", "2", "3", "4"].includes(operation)) {
-    prompt("Must choose 1, 2, 3 or 4");
+    prompt(messages.invalidOperation);
     operation = readline.question();
   }
 
@@ -66,15 +70,15 @@ do {
 
   console.log(`The result is: ${output}`);
 
-  prompt("Would you like to perform another calculation? \n1) yes 2) no");
-  
+  prompt(messages.goAgain);
+
   doAgain = readline.question();
 
-  while (!['1','2'].includes(doAgain)){
-    prompt("Must choose 1 or 2")
-    doAgain = readline.question()
+  while (!["1", "2"].includes(doAgain)) {
+    prompt(messages.invalidGo);
+    doAgain = readline.question();
   }
-} while ((doAgain === '1'))
+} while (doAgain === "1");
 
 // Misc code:
 
@@ -92,7 +96,7 @@ do {
 //   output = Number(number1) / Number(number2);
 // }
 
-// For the first add-on, adding the functionality to allow the 
+// For the first add-on, adding the functionality to allow the
 // user to perform multiple calculations, I should remember that breaking
 // out of a loop with the break statement is also an option. A Do, while
 // loop works, but it is less elegant, and arguably harder to read.
