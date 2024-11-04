@@ -9,45 +9,71 @@ const readline = require("readline-sync"); // looks for the "readline-sync" libr
 
 // Testing out git branches
 
-const messages = require("./calc_msgs.json");
+const MESSAGES = require("./calc_msgs.json");
 
-console.log(messages.welcome);
-
-function prompt(message) {
-  console.log(`=> ${message}`);
-}
+let language
 
 function invalidNumber(number) {
   return number.trimStart() === "" || Number.isNaN(Number(number)); // works because the Number coerces any non-numeric string value to NaN
 }
 
-prompt(messages.welcome);
+function messages(key, lang) {
+  return MESSAGES[lang][key];
+}
+
+function prompt(key, lang) {
+  let message = messages(key, lang)
+  console.log(`=> ${message}`);
+}
+
+prompt('selectLanguage', 'en');
+language = readline.question();
+while (!["1", "2", "3", "4"].includes(language)) {
+  prompt('invalidLanguage', 'en');
+  language = readline.question()
+}
+
+
+switch (language) {
+  case "1":
+    language = 'en';
+    break;
+  case "2":
+    language = 'es';
+    break;
+  case "3":
+    language = 'fr';
+    break;
+  case "4":
+    language = 'de';
+    break;
+}
+
+prompt('welcome', language);
 
 let doAgain;
 do {
-  prompt(messages.firstNumber);
+  prompt('firstNumber', language);
   let number1 = readline.question();
 
   while (invalidNumber(number1)) {
-    prompt(messages.invalidNumber);
+    prompt('invalidNumber', language);
     number1 = readline.question();
   }
 
-  prompt(messages.secondNumber);
+  prompt('secondNumber', language);
   let number2 = readline.question();
 
   while (invalidNumber(number2)) {
-    prompt(messages.invalidNumber);
+    prompt('invalidNumber', language);
     number2 = readline.question();
   }
 
-  prompt(
-    messages.performOperation
-  );
+  prompt('performOperation', language);
   let operation = readline.question();
 
   while (!["1", "2", "3", "4"].includes(operation)) {
-    prompt(messages.invalidOperation);
+    prompt('invalidOperation', language);
     operation = readline.question();
   }
 
@@ -70,12 +96,12 @@ do {
 
   console.log(`The result is: ${output}`);
 
-  prompt(messages.goAgain);
+  prompt('goAgain', language);
 
   doAgain = readline.question();
 
   while (!["1", "2"].includes(doAgain)) {
-    prompt(messages.invalidGo);
+    prompt('invalidGo', language);
     doAgain = readline.question();
   }
 } while (doAgain === "1");

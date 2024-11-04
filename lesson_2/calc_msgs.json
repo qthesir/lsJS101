@@ -1,10 +1,44 @@
 {
-  "welcome": "Welcome to the Calculator!",
-  "firstNumber": "What's the first number?",
-  "secondNumber": "What's the second number?",
-  "invalidNumber": "Hmm... that doesn't look like a valid number.",
-  "performOperation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
-  "invalidOperation": "Must choose 1, 2, 3, or 4",
-  "goAgain": "Would you like to perform another calculation \n 1) yes 2) no",
-  "invalidGo": "Must choose 1 or 2"
+  "en": {
+    "selectLanguage" : "Please select your language: \n1) English, 2) Spanish, 3) French 4) German ",
+    "invalidLanguage" : "Must choose 1, 2, 3, or 4",
+    "welcome": "Welcome to the Calculator!",
+    "firstNumber": "What's the first number?",
+    "secondNumber": "What's the second number?",
+    "invalidNumber": "Hmm... that doesn't look like a valid number.",
+    "performOperation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "invalidOperation": "Must choose 1, 2, 3, or 4",
+    "goAgain": "Would you like to perform another calculation \n 1) yes 2) no",
+    "invalidGo": "Must choose 1 or 2"
+  },
+  "es": {
+    "welcome": "¡Bienvenido a la Calculadora!",
+    "firstNumber": "¿Cuál es el primer número?",
+    "secondNumber": "¿Cuál es el segundo número?",
+    "invalidNumber": "Hmm... eso no parece un número válido.",
+    "performOperation": "¿Qué operación te gustaría realizar?\n1) Sumar 2) Restar 3) Multiplicar 4) Dividir",
+    "invalidOperation": "Debes elegir 1, 2, 3 o 4",
+    "goAgain": "¿Te gustaría realizar otro cálculo?\n 1) sí 2) no",
+    "invalidGo": "Debes elegir 1 o 2"
+  }, 
+  "fr": {
+    "welcome": "Bienvenue dans la Calculatrice!",
+    "firstNumber": "Quel est le premier nombre?",
+    "secondNumber": "Quel est le deuxième nombre?",
+    "invalidNumber": "Hmm... cela ne ressemble pas à un nombre valide.",
+    "performOperation": "Quelle opération souhaitez-vous effectuer?\n1) Additionner 2) Soustraire 3) Multiplier 4) Diviser",
+    "invalidOperation": "Vous devez choisir 1, 2, 3 ou 4",
+    "goAgain": "Voulez-vous faire un autre calcul?\n 1) oui 2) non",
+    "invalidGo": "Vous devez choisir 1 ou 2"
+  }, 
+  "de": {
+    "welcome": "Willkommen beim Taschenrechner!",
+    "firstNumber": "Was ist die erste Zahl?",
+    "secondNumber": "Was ist die zweite Zahl?",
+    "invalidNumber": "Hmm... das sieht nicht nach einer gültigen Zahl aus.",
+    "performOperation": "Welche Operation möchten Sie durchführen?\n1) Addieren 2) Subtrahieren 3) Multiplizieren 4) Dividieren",
+    "invalidOperation": "Sie müssen 1, 2, 3 oder 4 wählen",
+    "goAgain": "Möchten Sie eine weitere Berechnung durchführen?\n 1) ja 2) nein",
+    "invalidGo": "Sie müssen 1 oder 2 wählen"
+  }
 }
