@@ -126,3 +126,8 @@ do {
 // user to perform multiple calculations, I should remember that breaking
 // out of a loop with the break statement is also an option. A Do, while
 // loop works, but it is less elegant, and arguably harder to read.
+
+// For the internationalization, I initially set the messages variable depending on the 
+// value of a switch statement, but this is much less readible than setting a 
+// set of functions and a set of "settings" on top. Exemplary result of hack and slash
+// coding.
