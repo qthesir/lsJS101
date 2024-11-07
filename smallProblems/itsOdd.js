@@ -21,3 +21,10 @@ console.log(isOdd(-17)); // => true
 console.log(isOdd(-8)); // => false
 console.log(isOdd(0)); // => false
 console.log(isOdd(7)); // => true
+
+// PEDAC scratchpad
+
+// Input:
+//     One integer, which can be positive, negative, or zero
+// Output: 
+//     
