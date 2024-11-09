@@ -21,6 +21,7 @@
 // 7. The tip and total will be displayed on separate lines in the console.
 // 8. The bill and percentage will be input directly next to the question, not on a
 // line below it.
+// 9. The tip percentage is always a whole number, and is not expressed as a decimal.
 
 // Mental Model
 // User enters a tip and the tip percentage as whole numbers. Compute the tip amount,
