@@ -1,11 +1,11 @@
-/* 
-Write a function that determines and returns the UTF-16 string value of a string passed in 
-as an argument. The UTF-16 string value is the sum of the UTF-16 values of every character 
-in the string. (You may use String.prototype.charCodeAt() to determine the UTF-16 value of 
+/*
+Write a function that determines and returns the UTF-16 string value of a string passed in
+as an argument. The UTF-16 string value is the sum of the UTF-16 values of every character
+in the string. (You may use String.prototype.charCodeAt() to determine the UTF-16 value of
 a character.)
 */
 
-/* 
+/*
 PEDAC
 
 Problem
@@ -20,12 +20,12 @@ Implicit Assumptions
 3. The function will accept an empty string ''
 
 Questions
-1. What is UTF-16? UTF-16 is Unicode transfer format - 16 bit. 
+1. What is UTF-16? UTF-16 is Unicode transfer format - 16 bit.
 2. How do you derive UTF-16 from a string? (Use string.prototype.charCodeAt())
 
 Mental Model:
 Accept a string value as an argument. For each character in the string, determine a UTF-16
-value, and add it to the total. Return the total to the user. 
+value, and add it to the total. Return the total to the user.
 
 Examples / Test cases
 Input:
@@ -35,12 +35,12 @@ Output:
 
 Input:
     String: 'Launch School'
-Output: 
+Output:
     1251
 
 Input:
     String: 'a'
-Output: 
+Output:
     97
 
 Input:
