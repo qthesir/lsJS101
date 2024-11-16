@@ -48,14 +48,48 @@ Algorithm
 2. convert "str" to an array with " " as a delimeter
 3. return the second to last index of the array
 
-*/ 
+*/
 
 // Code
 
 function penultimate(str) {
-  let words = str.split(" ")
-  return words[words.length - 2]
+  let words = str.split(" ");
+  return words[words.length - 2];
 }
 
 console.log(penultimate("last word") === "last"); // logs true
 console.log(penultimate("Launch School is great!") === "is"); // logs true
+
+/* Further exploration 
+
+Create a function that returns the middle word of a phrase or sentance
+Possible edge cases:
+1. When the string is empty
+2. When the number of words is even vs. odd
+3. When there is only two words
+4. When the user enters non numbers
+*/
+
+function middleWord(str) {
+  if (typeof str !== "string") {
+    return "Please only enter words"
+  }
+  if (str.trim().length === 0) {
+    return "String is empty. Please enter at least 1 word.";
+  }
+  let words = str.split(" ");
+  if (words.length === 1) {
+    return words[0];
+  } else if (words.length % 2 === 0) {
+    return words[words.length / 2 - 1] + ", " + words[words.length / 2];
+  } else {
+    return words[Math.floor(words.length / 2)];
+  }
+}
+
+console.log(middleWord("last word"));
+console.log(middleWord("Launch School is great!"));
+console.log(middleWord("Launch School is so great!"));
+console.log(middleWord("Make america healthy again lets go woo!"));
+console.log(middleWord(5));
+console.log(middleWord(""));
