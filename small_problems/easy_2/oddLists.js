@@ -138,3 +138,6 @@ console.log(oddities3([1, 2, 3, 4, 5, 6])); // logs [1, 3, 5]
 let oddities4 = (arr) => arr.filter((_, index) => index % 2 === 0)
 
 console.log(oddities4([2, 3, 4, 5, 6])); // logs [2, 4, 6]
+
+// Learned about the other parameters that can be passed into forEach, filter, and other
+// array iterators, which is useful. Index in particular. 
