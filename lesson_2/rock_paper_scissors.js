@@ -1,6 +1,6 @@
 const readline = require("readline-sync");
-const outcomeMatrix = require("rps_outcomes.json");
-const VALID_CHOICES = ["rock", "paper", "scissors", "lizard", "spock"];
+const outcomeMatrix = require("./rps_outcomes.json");
+const VALID_CHOICES = Object.keys(outcomeMatrix);
 
 function prompt(message) {
   console.log(`=> ${message}`);
@@ -8,32 +8,10 @@ function prompt(message) {
 
 function pickWinner(choice, computerChoice) {
   // Returns "Player", "Computer", or "Tie" depending on the outcome
-
-  if (
-    (choice === "rock" &&
-      (computerChoice === "scissors" || computerChoice === "lizard")) ||
-    (choice === "paper" &&
-      (computerChoice === "rock" || computerChoice === "spock")) ||
-    (choice === "scissors" &&
-      (computerChoice === "paper" || computerChoice === "lizard")) ||
-    (choice === "lizard" &&
-      (computerChoice === "spock" || computerChoice === "paper")) ||
-    (choice === "spock" &&
-      (computerChoice === "scissors" || computerChoice === "rock"))
-  ) {
+  let result = outcomeMatrix[choice][computerChoice];
+  if (result === "win") {
     return "Player";
-  } else if (
-    (choice === "rock" &&
-      (computerChoice === "paper" || computerChoice === "spock")) ||
-    (choice === "paper" &&
-      (computerChoice === "scissors" || computerChoice === "lizard")) ||
-    (choice === "scissors" &&
-      (computerChoice === "rock" || computerChoice === "spock")) ||
-    (choice === "lizard" &&
-      (computerChoice === "rock" || computerChoice === "scissors")) ||
-    (choice === "spock" &&
-      (computerChoice === "paper" || computerChoice === "lizard"))
-  ) {
+  } else if (result === "lose") {
     return "Computer";
   } else {
     return "Tie";
@@ -143,4 +121,28 @@ gets score, just like in the real game.
 
 */
 
+// Reflection: I could have simplified my JSON file by structuring the object like 
+// so: 
+/*
+
+const WINNING_COMBOS = {
+  rock:     ['scissors', 'lizard'],
+  paper:    ['rock',     'spock'],
+  scissors: ['paper',    'lizard'],
+  lizard:   ['paper',    'spock'],
+  spock:    ['rock',     'scissors'],
+};
+
+Extracting data in this way makes it a little less readable, but a lot more maintainable. 
+It is a massive PITA to change huge conditional statements. 
+
+One of the things I will see throughout my career (according to LS) is extracting 
+function logic to a data structure, like the one above. I have also done this with 
+my JSON format, although it could certainly be simplified. 
+
+Could also create "winning combos" and "losing combos"
+
+*/ 
+
 // Do a code review!
+
