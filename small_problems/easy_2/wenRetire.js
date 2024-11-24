@@ -67,16 +67,25 @@ Algorithm
 
 // Code
 
-const readline = require("readline-sync")
+const readline = require("readline-sync");
 
+let age = Number(readline.question("What is your age? "));
+let retirementAge = Number(
+  readline.question("At what age would you like to retire? ")
+);
 
-let age = readline.question("What is your age? ")
-let retirementAge = readline.question("At what age would you like to retire? ")
+let yearsToRetirement = retirementAge - age;
 
-let yearsToRetirement = retirementAge - age
+let currentYear = new Date().getFullYear();
+let retirementYear = currentYear + yearsToRetirement;
 
-let currentYear = new Date().getFullYear()
-let retirementYear = currentYear + yearsToRetirement 
+console.log(`It's ${currentYear}. You will retire in ${retirementYear}.`);
+console.log(`You only have ${yearsToRetirement} years of work to go!`);
 
-console.log(`It's ${currentYear}. You will retire in ${retirementYear}.`)
-console.log(`You only have ${yearsToRetirement} years of work to go!`)
+// Reflection: I forgot to turn the readline.question into a number type! Ag.
+
+// When the new keyword is not used in front of the Date, the
+// program returns a typeError: .getFullYear is not a function. 
+// I think this is because its returning a string, which is attempting
+// to coherce the given value to a Date, whereas new Date() returns a 
+// new Date object, which basically creates a new prototype of the Date. 
