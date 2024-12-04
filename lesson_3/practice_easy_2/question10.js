@@ -18,3 +18,7 @@ let tCount4 = statement2.split("").filter(letter => letter === 't').length
 console.log("By using filter:")
 console.log(tCount3)
 console.log(tCount4)
+
+// The filter method is actually quite a bit more intuitive. It literally returns the array with only 
+// t's in it. Just take the length of that and that's how many t's their are in the array. Conceptually
+// much simpler. Although it was good to prace with the accumulator method!
