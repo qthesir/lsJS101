@@ -44,7 +44,7 @@ Input:
   To boldly go where no one has gone before.
 Ouput:
   +--------------------------------------------+
-   |                                            |
+  |                                            |
   | To boldly go where no one has gone before. |
   |                                            |
   +--------------------------------------------+
@@ -118,7 +118,7 @@ Pseudocode:
   If the length does exceed the max width, 
 3. Set the top/bottom border as "+" + ("-" * strLength + 2) + "+"
 4. Set the middle borders as "|" + (" " * strLength + 2) + "|"
-5. Set the text line as "|" + " " + str + " " + |
+5. Set the text line as "|" + " " + str + " " + "|"
 6. Construct the box and log to the console
 
 */
