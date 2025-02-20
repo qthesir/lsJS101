@@ -10,6 +10,7 @@ let munsters = {
 };
 
 function messWithDemographics(demoObject) {
+  console.log(Object.values(demoObject))
   Object.values(demoObject).forEach(familyMember => {
     familyMember["age"] += 42;
     familyMember["gender"] = "other";

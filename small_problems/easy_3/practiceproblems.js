@@ -1,16 +1,16 @@
 // What will be logged to the console and why? -- Nick
 
-// const original = {
-//   a: 1,
-//   b: { c: 2 },
-// };
+const original = {
+  a: 1,
+  b: { c: 2 },
+};
 
-// const shallowCopy = { ...original };
-// shallowCopy.a = 10;
-// shallowCopy.b.c = 20;
+const shallowCopy = { ...original };
+shallowCopy.a = 10;
+shallowCopy.b.c = 20;
 
-// console.log(original.a, original.b.c); // 1 20
-// console.log(shallowCopy.a, shallowCopy.b.c);//  10 20
+console.log(original.a, original.b.c); // 1 20
+console.log(shallowCopy.a, shallowCopy.b.c);//  10 20
 
 // Here, when the object "original" is copied with the spreader syntax, the spreader syntax is also copying
 // the reference to the nested object. Therefore, if the nested object is mutated in either object, the change
@@ -21,16 +21,16 @@
 
 // What is logged on the last line? Explain -- MOnte
 
-// const a = 1 && 2;
-// const b = 0 || 3;
+const a = 1 && 2;
+const b = 0 || 3;
 
-// if (a > b) {
-//   c = a;
-// } else {
-//   c = b;
-// }
+if (a > b) {
+  c = a;
+} else {
+  c = b;
+}
 
-// console.log(c);
+console.log(c);
 
 // This has to do with short circuiting logical operators. In &&, both values need to evaluate to true before
 // the operator returns a value (if it were false, it would return that value immediately, because the logical
